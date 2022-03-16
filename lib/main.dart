@@ -24,6 +24,11 @@ class MyApp extends StatelessWidget {
 
 //TODO: we will use enum in this branch
 
+enum ContainerColor {
+  first,
+  second,
+}
+
 const inactiveColor = Colors.amber;
 const activeColor = Colors.red;
 
@@ -42,14 +47,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Color firstContainerColor = inactiveColor;
   Color secondContainerColor = inactiveColor;
-  void _changeColor(int container) {
-    if (container == 1) {
+  void _changeColor(ContainerColor selectedContainer) {
+    if (selectedContainer == ContainerColor.first) {
       firstContainerColor = activeColor;
       secondContainerColor = inactiveColor;
     } else {
       firstContainerColor = inactiveColor;
     }
-    if (container == 2) {
+    if (selectedContainer == ContainerColor.second) {
       secondContainerColor = activeColor;
       firstContainerColor = inactiveColor;
     } else {
@@ -75,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          _changeColor(1);
+                          _changeColor(ContainerColor.first);
                         });
                       },
                       child: Container(
@@ -94,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          _changeColor(2);
+                          _changeColor(ContainerColor.second);
                         });
                       },
                       child: Container(
