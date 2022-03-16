@@ -22,6 +22,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
+const inactiveColor = Colors.amber;
+const activeColor = Colors.red;
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
     Key? key,
@@ -35,9 +38,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _changeColor() {}
+  Color firstContainerColor = inactiveColor;
+  Color secondContainerColor = inactiveColor;
+  void _changeColor(int container) {
+    if (container == 1) {
+      firstContainerColor = activeColor;
+      secondContainerColor = inactiveColor;
+    } else {
+      firstContainerColor = inactiveColor;
+    }
+    if (container == 2) {
+      secondContainerColor = activeColor;
+      firstContainerColor = inactiveColor;
+    } else {
+      secondContainerColor = inactiveColor;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,14 +73,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          _counter++;
+                          _changeColor(1);
                         });
                       },
                       child: Container(
-                        color: Colors.amber,
+                        alignment: Alignment.center,
+                        color: firstContainerColor,
                         width: 250.0,
                         height: 250.0,
-                        child: const Text('data'),
+                        child: const Text('Press Me'),
                       ),
                     ),
                   ),
@@ -75,32 +92,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          _counter++;
+                          _changeColor(2);
                         });
                       },
                       child: Container(
-                        color: Colors.amber,
+                        alignment: Alignment.center,
+                        color: secondContainerColor,
                         width: 250.0,
                         height: 250.0,
-                        child: const Text('data'),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(18.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _counter++;
-                        });
-                      },
-                      child: Container(
-                        color: Colors.amber,
-                        width: 250.0,
-                        height: 250.0,
-                        child: const Text('data'),
+                        child: const Text('Press Me'),
                       ),
                     ),
                   ),
