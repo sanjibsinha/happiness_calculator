@@ -1,0 +1,31 @@
+void main() {  
+  
+  Robot worker = Robot(name: RobotType.worker);
+  Robot thinker = Robot(name: RobotType.thinker);
+  
+  if(worker.name == RobotType.worker) {
+    print('My robot has just cleaned the room.');
+  } else {
+    print('My robot has not done anything.');
+  } // My robot has just cleaned the room.
+  
+  if(thinker.name == RobotType.thinker) {
+    print('My robot has just solved a Mathematical problem.');
+  } else {
+    print('My robot has not done anything.');
+  } // My robot has just solved a Mathematical problem.
+    
+}
+
+class Robot {
+  
+  String? name;
+  
+  Robot({this.name});  
+  
+}
+
+class RobotType {
+  static const worker = 'Worker';
+  static const thinker = 'Thinker';  
+}
