@@ -7,22 +7,18 @@ void main() {
   } else if(robu.robotType == RobotType.worker) {
     print('My robot has just cleaned the room.');
   } else {
-    print('My robot can neither think, nor work.');
+    print('My robot has not done anything.');
   }
   
   //output: My robot has just cleaned the room.
   
 }
 
-
-
-
 class Robot {
   
   RobotType? robotType;
   
-  Robot({this.robotType});
-  
+  Robot({this.robotType});  
   
 }
 
