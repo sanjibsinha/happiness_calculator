@@ -1,0 +1,32 @@
+void main() {
+  
+  Robot robu = Robot(robotType: RobotType.worker)  ;
+  
+  if(robu.robotType == RobotType.thinker) {
+    print('My robot has just solved a Mathematical problem.');
+  } else if(robu.robotType == RobotType.worker) {
+    print('My robot has just cleaned the room.');
+  } else {
+    print('My robot can neither think, nor work.');
+  }
+  
+  //output: My robot has just cleaned the room.
+  
+}
+
+
+
+
+class Robot {
+  
+  RobotType? robotType;
+  
+  Robot({this.robotType});
+  
+  
+}
+
+enum RobotType {
+  worker,
+  thinker,  
+}
