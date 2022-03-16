@@ -1,17 +1,20 @@
 void main() {
   
-  Robot robu = Robot(robotType: RobotType.worker)  ;
+  Robot worker = Robot(robotType: RobotType.worker);
+  Robot thinker = Robot(robotType: RobotType.thinker);
   
-  if(robu.robotType == RobotType.thinker) {
-    print('My robot has just solved a Mathematical problem.');
-  } else if(robu.robotType == RobotType.worker) {
+  if(worker.robotType == RobotType.worker) {
     print('My robot has just cleaned the room.');
   } else {
     print('My robot has not done anything.');
-  }
+  } // My robot has just cleaned the room.
   
-  //output: My robot has just cleaned the room.
-  
+  if(thinker.robotType == RobotType.thinker) {
+    print('My robot has just solved a Mathematical problem.');
+  } else {
+    print('My robot has not done anything.');
+  } // My robot has just solved a Mathematical problem.
+    
 }
 
 class Robot {
