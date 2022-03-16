@@ -22,6 +22,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//TODO: we will use enum in this branch
+
 const inactiveColor = Colors.amber;
 const activeColor = Colors.red;
 
