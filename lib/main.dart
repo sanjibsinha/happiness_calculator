@@ -45,22 +45,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Color firstContainerColor = inactiveColor;
-  Color secondContainerColor = inactiveColor;
-  void _changeColor(ContainerColor selectedContainer) {
-    if (selectedContainer == ContainerColor.first) {
-      firstContainerColor = activeColor;
-      secondContainerColor = inactiveColor;
-    } else {
-      firstContainerColor = inactiveColor;
-    }
-    if (selectedContainer == ContainerColor.second) {
-      secondContainerColor = activeColor;
-      firstContainerColor = inactiveColor;
-    } else {
-      secondContainerColor = inactiveColor;
-    }
-  }
+  ContainerColor? selectedContainer;
 
   @override
   Widget build(BuildContext context) {
@@ -80,12 +65,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          _changeColor(ContainerColor.first);
+                          //_changeColor(ContainerColor.first);
+                          selectedContainer = ContainerColor.first;
                         });
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        color: firstContainerColor,
+                        color: selectedContainer == ContainerColor.first
+                            ? activeColor
+                            : inactiveColor,
                         width: 250.0,
                         height: 250.0,
                         child: const Text('Press Me'),
@@ -99,12 +87,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          _changeColor(ContainerColor.second);
+                          selectedContainer = ContainerColor.second;
                         });
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        color: secondContainerColor,
+                        color: selectedContainer == ContainerColor.second
+                            ? activeColor
+                            : inactiveColor,
                         width: 250.0,
                         height: 250.0,
                         child: const Text('Press Me'),
