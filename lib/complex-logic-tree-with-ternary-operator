@@ -1,0 +1,23 @@
+void main() {
+  bool johnSmithIsTheBestGunner = true;
+  
+  if(johnSmithIsTheBestGunner){
+    print('John Smith is the best gunner.');
+  } else {
+    print('Hicky is the best gunner');
+  } // John Smith is the best gunner.
+  
+  bool willJohnKillHicky = johnSmithIsTheBestGunner ? true : false;
+  
+  print(willJohnKillHicky); // true
+  
+  // now we can build a complex logic tree based on this single expression
+  
+  bool willPeaceReturnToJericho = willJohnKillHicky ? true : false;
+  
+  ((johnSmithIsTheBestGunner && willJohnKillHicky) && willPeaceReturnToJericho) ?
+    print('John Smith is the best gunner. He kills Hicky and peace returns to Jericho.') :
+  print('Jericho remains the ghost town.');
+  
+  // John Smith is the best gunner. He kills Hicky and peace returns to Jericho.  
+}
