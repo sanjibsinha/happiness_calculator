@@ -1,0 +1,42 @@
+void main() {  
+  
+  Human good = Human(humanType: HumanType.good);
+  Human bad = Human(humanType: HumanType.bad);
+  
+  if(good.humanType == HumanType.good || bad.humanType == HumanType.bad) {
+    print('Good or bad? Always Good.');
+  } else {
+    print('Good or bad? Always Bad.');
+  } // Good or bad? Always Good. 
+  
+  if(good.humanType == HumanType.good && bad.humanType == HumanType.bad) {
+    print('Good and bad? Always Bad.');
+  } else {
+    print('Good and bad? Always Good.');
+  } // Good and bad? Always Bad.
+  
+  // conditional or ternary operator
+  
+  (good.humanType == HumanType.good || bad.humanType == HumanType.bad) ?
+    print('Good or bad? Always Good.') :
+  print('Good or bad? Always Bad.'); // // Good or bad? Always Good. 
+  
+  (good.humanType == HumanType.good && bad.humanType == HumanType.bad) ?
+    print('Good and bad? Always Bad.') :
+  print('Good and bad? Always Good.'); // // Good and bad? Always Bad.
+  
+  
+}
+
+class Human {
+  
+  HumanType? humanType;
+  
+  Human({this.humanType});  
+  
+}
+
+enum HumanType {
+  good,
+  bad,
+}
