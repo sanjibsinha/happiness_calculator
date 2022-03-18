@@ -17,6 +17,7 @@ class HappinessHomePage extends StatefulWidget {
 
 class _HappinessHomePageState extends State<HappinessHomePage> {
   ContainerColor? selectedContainer;
+  int height = 120;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,53 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                 expandEnum(ContainerColor.second),
               ],
             ),
+            Expanded(
+              child: Container(
+                margin: const EdgeInsets.all(15.0),
+                alignment: Alignment.center,
+                color: inactiveColor,
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    const Text('How The Slider Widget Works'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(
+                          height.toString(),
+                          style: const TextStyle(
+                            fontSize: 60.0,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        const Text(
+                          'cm',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w100,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Slider(
+                      value: height.toDouble(),
+                      min: 120.0,
+                      max: 220.0,
+                      activeColor: activeColor,
+                      inactiveColor: Colors.black26,
+                      onChanged: (double newValue) {
+                        setState(() {
+                          height = newValue.round();
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -55,8 +103,8 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
             color: selectedContainer == containerColor
                 ? activeColor
                 : inactiveColor,
-            width: 250.0,
-            height: 250.0,
+            width: 150.0,
+            height: 150.0,
             child: const Text('Press Me'),
           ),
         ),
