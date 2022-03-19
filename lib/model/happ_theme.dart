@@ -32,6 +32,14 @@ class HappyTheme {
     ),
   );
 
+  static TextStyle genderStyle = GoogleFonts.antic(
+    textStyle: const TextStyle(
+      color: HappyTheme.shrineSurfaceWhite,
+      fontSize: 15.0,
+      fontWeight: FontWeight.bold,
+    ),
+  );
+
   static TextStyle questionStyle = GoogleFonts.laila(
     textStyle: const TextStyle(
       color: HappyTheme.shrineBrown600,
@@ -114,16 +122,16 @@ class HappyTheme {
     brightness: Brightness.light,
   );
 
-  static const Color activeCoor = Color(0xFFEAA4A4);
-  static const Color inactiveCoor = Color(0xFF7D4F52);
+  static const Color activeCoor = Color(0xFF660909);
+  static const Color inactiveCoor = Color(0xFF7c0707);
 
   static const Color shrinePink50 = Color(0xFFFEEAE6);
   static const Color shrinePink100 = Color(0xFFFEDBD0);
   static const Color shrinePink300 = Color(0xFFFBB8AC);
   static const Color shrinePink400 = Color(0xFFEAA4A4);
 
-  static const Color shrineBrown900 = Color(0xFF442B2D);
-  static const Color shrineBrown600 = Color(0xFF7D4F52);
+  static const Color shrineBrown900 = Color(0xFF4f0808);
+  static const Color shrineBrown600 = Color(0xFF660909);
 
   static const Color shrineErrorRed = Color(0xFFC5032B);
 
