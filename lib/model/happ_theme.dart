@@ -122,8 +122,8 @@ class HappyTheme {
     brightness: Brightness.light,
   );
 
-  static const Color activeCoor = Color(0xFF660909);
-  static const Color inactiveCoor = Color(0xFF7c0707);
+  static const Color activeCoor = Color(0xFFaa1111);
+  static const Color inactiveCoor = Color(0xFF893131);
 
   static const Color shrinePink50 = Color(0xFFFEEAE6);
   static const Color shrinePink100 = Color(0xFFFEDBD0);
@@ -131,7 +131,7 @@ class HappyTheme {
   static const Color shrinePink400 = Color(0xFFEAA4A4);
 
   static const Color shrineBrown900 = Color(0xFF4f0808);
-  static const Color shrineBrown600 = Color(0xFF660909);
+  static const Color shrineBrown600 = Color(0xFF893131);
 
   static const Color shrineErrorRed = Color(0xFFC5032B);
 
