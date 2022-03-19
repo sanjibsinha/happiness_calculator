@@ -41,10 +41,12 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                 expandEnum(
                   ContainerColor.first,
                   'Male',
+                  Icons.male,
                 ),
                 expandEnum(
                   ContainerColor.second,
                   'Female',
+                  Icons.female,
                 ),
               ],
             ),
@@ -112,7 +114,8 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
     );
   }
 
-  Expanded expandEnum(ContainerColor? containerColor, String gender) {
+  Expanded expandEnum(
+      ContainerColor? containerColor, String gender, IconData genderIcon) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(18.0),
@@ -128,10 +131,17 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                 ? HappyTheme.activeCoor
                 : HappyTheme.inactiveCoor,
             width: 150.0,
-            height: 150.0,
+            height: 100.0,
             child: Column(
               children: [
-                Text(gender),
+                Icon(
+                  genderIcon,
+                  size: 80.0,
+                ),
+                Text(
+                  gender,
+                  style: HappyTheme.genderStyle,
+                ),
               ],
             ),
           ),
