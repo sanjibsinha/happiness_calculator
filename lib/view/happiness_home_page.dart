@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:happiness_calculator/view/happiness_result.dart';
 
@@ -19,7 +21,9 @@ class HappinessHomePage extends StatefulWidget {
 
 class _HappinessHomePageState extends State<HappinessHomePage> {
   ContainerColor? selectedContainer;
-  int height = 0;
+  int greed = 20;
+  int gratitude = 10;
+  int dilligence = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +82,7 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(
-                          height.toString(),
+                          greed.toString(),
                           style: HappyTheme.greedStyle,
                         ),
                       ],
@@ -97,14 +101,14 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                         ),
                       ),
                       child: Slider(
-                        value: height.toDouble(),
-                        min: 0.0,
+                        value: greed.toDouble(),
+                        min: 20.0,
                         max: 100.0,
                         activeColor: activeColor,
                         inactiveColor: Colors.black26,
                         onChanged: (double newValue) {
                           setState(() {
-                            height = newValue.round();
+                            greed = newValue.round();
                           });
                         },
                       ),
@@ -116,15 +120,74 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                expandGender(
-                  ContainerColor.first,
-                  'Male',
-                  Icons.male,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: double.infinity,
+                      height: 100.0,
+                      color: HappyTheme.inactiveCoor,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text(
+                            'GRATITUDE',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              FloatingActionButton(
+                                onPressed: () {
+                                  setState(() {
+                                    gratitude--;
+                                  });
+                                },
+                                child: const Icon(
+                                  Icons.minimize,
+                                ),
+                              ),
+                              Text(
+                                gratitude.toString(),
+                                style: HappyTheme.dilligenceStyle,
+                              ),
+                              FloatingActionButton(
+                                onPressed: () {
+                                  setState(() {
+                                    gratitude++;
+                                  });
+                                },
+                                child: const Icon(
+                                  Icons.add,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
-                expandGender(
-                  ContainerColor.second,
-                  'Female',
-                  Icons.female,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: double.infinity,
+                      height: 100.0,
+                      color: HappyTheme.inactiveCoor,
+                      child: Text(
+                        dilligence.toString(),
+                        style: HappyTheme.genderStyle,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
