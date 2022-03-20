@@ -120,130 +120,8 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: double.infinity,
-                      height: 100.0,
-                      color: HappyTheme.inactiveCoor,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Text(
-                            'GRATITUDE',
-                            style: TextStyle(
-                              fontSize: 20.0,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              FloatingActionButton(
-                                heroTag: 'btn1',
-                                onPressed: () {
-                                  setState(() {
-                                    gratitude--;
-                                  });
-                                },
-                                child: const Icon(
-                                  Icons.minimize,
-                                ),
-                              ),
-                              Container(
-                                padding: const EdgeInsets.only(
-                                  left: 10.0,
-                                  right: 10.0,
-                                ),
-                                child: Text(
-                                  gratitude.toString(),
-                                  style: HappyTheme.dilligenceStyle,
-                                ),
-                              ),
-                              FloatingActionButton(
-                                heroTag: 'btn2',
-                                onPressed: () {
-                                  setState(() {
-                                    gratitude++;
-                                  });
-                                },
-                                child: const Icon(
-                                  Icons.add,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: double.infinity,
-                      height: 100.0,
-                      color: HappyTheme.inactiveCoor,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Text(
-                            'DILLIGENCE',
-                            style: TextStyle(
-                              fontSize: 20.0,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              FloatingActionButton(
-                                heroTag: 'btn3',
-                                onPressed: () {
-                                  setState(() {
-                                    dilligence--;
-                                  });
-                                },
-                                child: const Icon(
-                                  Icons.minimize,
-                                ),
-                              ),
-                              Container(
-                                padding: const EdgeInsets.only(
-                                  left: 10.0,
-                                  right: 10.0,
-                                ),
-                                child: Text(
-                                  dilligence.toString(),
-                                  style: HappyTheme.dilligenceStyle,
-                                ),
-                              ),
-                              FloatingActionButton(
-                                heroTag: 'btn4',
-                                onPressed: () {
-                                  setState(() {
-                                    dilligence++;
-                                  });
-                                },
-                                child: const Icon(
-                                  Icons.add,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                expandGratitude(),
+                expandDilligence(),
               ],
             ),
           ],
@@ -265,6 +143,136 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
           child: Text(
             'CALCULATE',
             style: HappyTheme.appbarStyle,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Expanded expandDilligence() {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Container(
+          alignment: Alignment.center,
+          width: double.infinity,
+          height: 100.0,
+          color: HappyTheme.inactiveCoor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'DILLIGENCE',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  FloatingActionButton(
+                    heroTag: 'btn3',
+                    onPressed: () {
+                      setState(() {
+                        dilligence--;
+                      });
+                    },
+                    child: const Icon(
+                      Icons.minimize,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      left: 10.0,
+                      right: 10.0,
+                    ),
+                    child: Text(
+                      dilligence.toString(),
+                      style: HappyTheme.dilligenceStyle,
+                    ),
+                  ),
+                  FloatingActionButton(
+                    heroTag: 'btn4',
+                    onPressed: () {
+                      setState(() {
+                        dilligence++;
+                      });
+                    },
+                    child: const Icon(
+                      Icons.add,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Expanded expandGratitude() {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Container(
+          alignment: Alignment.center,
+          width: double.infinity,
+          height: 100.0,
+          color: HappyTheme.inactiveCoor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'GRATITUDE',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  FloatingActionButton(
+                    heroTag: 'btn1',
+                    onPressed: () {
+                      setState(() {
+                        gratitude--;
+                      });
+                    },
+                    child: const Icon(
+                      Icons.minimize,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      left: 10.0,
+                      right: 10.0,
+                    ),
+                    child: Text(
+                      gratitude.toString(),
+                      style: HappyTheme.dilligenceStyle,
+                    ),
+                  ),
+                  FloatingActionButton(
+                    heroTag: 'btn2',
+                    onPressed: () {
+                      setState(() {
+                        gratitude++;
+                      });
+                    },
+                    child: const Icon(
+                      Icons.add,
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
@@ -296,6 +304,7 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                 Icon(
                   genderIcon,
                   size: 80.0,
+                  color: Colors.white,
                 ),
                 Text(
                   gender,
