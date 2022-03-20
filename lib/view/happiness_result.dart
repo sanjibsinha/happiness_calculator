@@ -7,9 +7,9 @@ class HappinessResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HappyTheme.scaffoldBackgroundColor,
+      backgroundColor: HappyTheme.shrineBrown900,
       appBar: AppBar(
-        backgroundColor: HappyTheme.appBarBackgroundColor,
+        backgroundColor: HappyTheme.shrineBrown600,
         title: Text(
           'Know How Happy You Are!',
           style: HappyTheme.appbarStyle,
@@ -19,7 +19,7 @@ class HappinessResult extends StatelessWidget {
         margin: const EdgeInsets.all(5.0),
         child: Text(
           'Result',
-          style: HappyTheme.questionStyle,
+          style: HappyTheme.resultStyle,
         ),
       ),
     );

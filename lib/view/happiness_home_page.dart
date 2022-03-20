@@ -144,6 +144,7 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               FloatingActionButton(
+                                heroTag: 'btn1',
                                 onPressed: () {
                                   setState(() {
                                     gratitude--;
@@ -153,11 +154,18 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                                   Icons.minimize,
                                 ),
                               ),
-                              Text(
-                                gratitude.toString(),
-                                style: HappyTheme.dilligenceStyle,
+                              Container(
+                                padding: const EdgeInsets.only(
+                                  left: 10.0,
+                                  right: 10.0,
+                                ),
+                                child: Text(
+                                  gratitude.toString(),
+                                  style: HappyTheme.dilligenceStyle,
+                                ),
                               ),
                               FloatingActionButton(
+                                heroTag: 'btn2',
                                 onPressed: () {
                                   setState(() {
                                     gratitude++;
@@ -182,9 +190,56 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                       width: double.infinity,
                       height: 100.0,
                       color: HappyTheme.inactiveCoor,
-                      child: Text(
-                        dilligence.toString(),
-                        style: HappyTheme.genderStyle,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text(
+                            'DILLIGENCE',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              FloatingActionButton(
+                                heroTag: 'btn3',
+                                onPressed: () {
+                                  setState(() {
+                                    dilligence--;
+                                  });
+                                },
+                                child: const Icon(
+                                  Icons.minimize,
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.only(
+                                  left: 10.0,
+                                  right: 10.0,
+                                ),
+                                child: Text(
+                                  dilligence.toString(),
+                                  style: HappyTheme.dilligenceStyle,
+                                ),
+                              ),
+                              FloatingActionButton(
+                                heroTag: 'btn4',
+                                onPressed: () {
+                                  setState(() {
+                                    dilligence++;
+                                  });
+                                },
+                                child: const Icon(
+                                  Icons.add,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
