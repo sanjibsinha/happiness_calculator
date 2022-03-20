@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:happiness_calculator/model/happ_theme.dart';
+import 'package:happiness_calculator/model/happy_theme.dart';
 
 import 'happiness_home_page.dart';
 
@@ -12,9 +12,9 @@ class HappinessApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Happiness Calculator',
       theme: happyTheme.buildTheme(),
-      home: const HappinessHomePage(title: 'Flutter Happiness Calculator'),
+      home: const HappinessHomePage(title: 'Happiness Calculator'),
     );
   }
 }

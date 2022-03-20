@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:happiness_calculator/view/happiness_result.dart';
 
-import '../model/happ_theme.dart';
+import '../model/happy_theme.dart';
 import '../model/constants.dart';
 import '../model/container_color.dart';
 
@@ -27,7 +28,7 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: HappyTheme.answerStyle,
+          style: HappyTheme.appbarStyle,
         ),
         backgroundColor: HappyTheme.shrineBrown600,
       ),
@@ -36,13 +37,15 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                expandEnum(
+                expandGender(
                   ContainerColor.first,
                   'Male',
                   Icons.male,
                 ),
-                expandEnum(
+                expandGender(
                   ContainerColor.second,
                   'Female',
                   Icons.female,
@@ -51,19 +54,22 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
             ),
             Expanded(
               child: Container(
-                margin: const EdgeInsets.all(15.0),
+                margin: const EdgeInsets.all(5.0),
                 alignment: Alignment.center,
                 color: HappyTheme.shrineBrown600,
                 width: double.infinity,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
                       padding: const EdgeInsets.only(
                         top: 5.0,
+                        bottom: 2.0,
                       ),
                       child: Text(
                         'GREED',
-                        style: HappyTheme.answerStyle,
+                        style: HappyTheme.appbarStyle,
                       ),
                     ),
                     Row(
@@ -107,17 +113,51 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                 ),
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                expandGender(
+                  ContainerColor.first,
+                  'Male',
+                  Icons.male,
+                ),
+                expandGender(
+                  ContainerColor.second,
+                  'Female',
+                  Icons.female,
+                ),
+              ],
+            ),
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        width: double.infinity,
+        height: 60.0,
+        color: HappyTheme.activeCoor,
+        child: TextButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HappinessResult(),
+              ),
+            );
+          },
+          child: Text(
+            'CALCULATE',
+            style: HappyTheme.appbarStyle,
+          ),
         ),
       ),
     );
   }
 
-  Expanded expandEnum(
+  Expanded expandGender(
       ContainerColor? containerColor, String gender, IconData genderIcon) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: const EdgeInsets.all(5.0),
         child: GestureDetector(
           onTap: () {
             setState(() {
@@ -129,9 +169,11 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
             color: selectedContainer == containerColor
                 ? HappyTheme.activeCoor
                 : HappyTheme.inactiveCoor,
-            width: 150.0,
+            width: double.infinity,
             height: 100.0,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
                   genderIcon,

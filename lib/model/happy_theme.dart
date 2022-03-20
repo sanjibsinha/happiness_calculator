@@ -48,9 +48,9 @@ class HappyTheme {
     ),
   );
 
-  static TextStyle appbarStyle = GoogleFonts.salsa(
+  static TextStyle appbarStyle = GoogleFonts.lato(
     textStyle: const TextStyle(
-      color: HappyTheme.shrineBrown600,
+      color: HappyTheme.shrineSurfaceWhite,
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
     ),
