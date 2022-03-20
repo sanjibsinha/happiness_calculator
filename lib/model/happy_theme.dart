@@ -6,16 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 ///
 
 class HappyTheme {
-  static const Color primaryColor = Color(0xFF409B25);
-  static const Color scaffoldBackgroundColor = Color(0xFF2C6F2E);
-  static const Color appBarBackgroundColor = Color(0xFF2C6F2E);
-  static const Color boxDecorationColor = Color(0xFFC5DA28);
-  static const Color elevatedButtonPrimaryColor = Color(0xFF3C9415);
-  static const Color dividerColor = Color(0xFFD9DB26);
-  static const correctAnswerColor = Color(0xFFFACAFA);
-  static const questionTextColor = Color(0xFFF8E1F8);
-  static const answerColor = Color(0xFFFFFFFF);
-
   static TextStyle answerStyle = GoogleFonts.langar(
     textStyle: const TextStyle(
       color: HappyTheme.answerColor,
@@ -57,6 +47,14 @@ class HappyTheme {
   );
 
   static TextStyle dilligenceStyle = GoogleFonts.laila(
+    textStyle: const TextStyle(
+      color: HappyTheme.shrineSurfaceWhite,
+      fontSize: 40.0,
+      fontWeight: FontWeight.bold,
+    ),
+  );
+
+  static TextStyle resultStyle = GoogleFonts.laila(
     textStyle: const TextStyle(
       color: HappyTheme.shrineSurfaceWhite,
       fontSize: 40.0,
@@ -129,6 +127,8 @@ class HappyTheme {
     onError: shrineSurfaceWhite,
     brightness: Brightness.light,
   );
+
+  static const answerColor = Color(0xFFFFFFFF);
 
   static const Color activeCoor = Color(0xFFaa1111);
   static const Color inactiveCoor = Color(0xFF893131);
