@@ -62,6 +62,22 @@ class HappyTheme {
     ),
   );
 
+  static TextStyle happinessIndexStyle = GoogleFonts.antic(
+    textStyle: const TextStyle(
+      color: HappyTheme.shrineSurfaceWhite,
+      fontSize: 100.0,
+      fontWeight: FontWeight.bold,
+    ),
+  );
+
+  static TextStyle happinessResultStyle = GoogleFonts.lato(
+    textStyle: const TextStyle(
+      color: HappyTheme.shrineSurfaceWhite,
+      fontSize: 20.0,
+      fontWeight: FontWeight.bold,
+    ),
+  );
+
   ThemeData _buildShrineTheme() {
     final ThemeData base = ThemeData.light();
     return base.copyWith(
