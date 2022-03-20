@@ -56,6 +56,14 @@ class HappyTheme {
     ),
   );
 
+  static TextStyle dilligenceStyle = GoogleFonts.laila(
+    textStyle: const TextStyle(
+      color: HappyTheme.shrineSurfaceWhite,
+      fontSize: 40.0,
+      fontWeight: FontWeight.bold,
+    ),
+  );
+
   ThemeData _buildShrineTheme() {
     final ThemeData base = ThemeData.light();
     return base.copyWith(
