@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:happiness_calculator/model/happiness_calculator.dart';
 import 'package:happiness_calculator/view/happiness_result.dart';
 
 import '../model/happy_theme.dart';
@@ -23,7 +22,7 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
   ContainerColor? selectedContainer;
   int greed = 20;
   int gratitude = 10;
-  int dilligence = 20;
+  int diligence = 30;
 
   @override
   Widget build(BuildContext context) {
@@ -133,10 +132,22 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
         color: HappyTheme.activeCoor,
         child: TextButton(
           onPressed: () {
+            HappinessCalculator happy = HappinessCalculator(
+              greed: greed,
+              gratitude: gratitude,
+              diligence: diligence,
+            );
+            happy.calculateHappiness();
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const HappinessResult(),
+                builder: (context) => HappinessResult(
+                  greed: greed,
+                  gratitude: gratitude,
+                  diligence: diligence,
+                  happinessIndex: happy.getResult(),
+                  whatIsToBeDone: happy.getAdvice(),
+                ),
               ),
             );
           },
@@ -163,7 +174,7 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               const Text(
-                'DILLIGENCE',
+                'DILIGENCE',
                 style: TextStyle(
                   fontSize: 20.0,
                   color: Colors.white,
@@ -177,7 +188,7 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                     heroTag: 'btn3',
                     onPressed: () {
                       setState(() {
-                        dilligence--;
+                        diligence--;
                       });
                     },
                     child: const Icon(
@@ -190,7 +201,7 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                       right: 10.0,
                     ),
                     child: Text(
-                      dilligence.toString(),
+                      diligence.toString(),
                       style: HappyTheme.dilligenceStyle,
                     ),
                   ),
@@ -198,7 +209,7 @@ class _HappinessHomePageState extends State<HappinessHomePage> {
                     heroTag: 'btn4',
                     onPressed: () {
                       setState(() {
-                        dilligence++;
+                        diligence++;
                       });
                     },
                     child: const Icon(
