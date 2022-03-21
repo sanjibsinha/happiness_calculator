@@ -57,7 +57,7 @@ class HappyTheme {
   static TextStyle resultStyle = GoogleFonts.laila(
     textStyle: const TextStyle(
       color: HappyTheme.shrineSurfaceWhite,
-      fontSize: 40.0,
+      fontSize: 25.0,
       fontWeight: FontWeight.bold,
     ),
   );
@@ -65,7 +65,7 @@ class HappyTheme {
   static TextStyle happinessIndexStyle = GoogleFonts.antic(
     textStyle: const TextStyle(
       color: HappyTheme.shrineSurfaceWhite,
-      fontSize: 100.0,
+      fontSize: 80.0,
       fontWeight: FontWeight.bold,
     ),
   );
@@ -73,7 +73,7 @@ class HappyTheme {
   static TextStyle happinessResultStyle = GoogleFonts.lato(
     textStyle: const TextStyle(
       color: HappyTheme.shrineSurfaceWhite,
-      fontSize: 20.0,
+      fontSize: 25.0,
       fontWeight: FontWeight.bold,
     ),
   );

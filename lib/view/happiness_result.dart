@@ -2,7 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:happiness_calculator/model/happy_theme.dart';
 
 class HappinessResult extends StatelessWidget {
-  const HappinessResult({Key? key}) : super(key: key);
+  const HappinessResult({
+    Key? key,
+    required this.greed,
+    required this.gratitude,
+    required this.diligence,
+    required this.happinessIndex,
+    required this.whatIsToBeDone,
+  }) : super(key: key);
+  final int greed;
+  final int gratitude;
+  final int diligence;
+
+  final String happinessIndex;
+  final String whatIsToBeDone;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +35,11 @@ class HappinessResult extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              margin: const EdgeInsets.all(5.0),
+              margin: const EdgeInsets.all(15.0),
               child: Text(
-                'Result',
+                'Result: Your Greed is: $greed, '
+                'your Gratitude is: $gratitude '
+                'your Diligence is: $diligence.',
                 style: HappyTheme.resultStyle,
               ),
             ),
@@ -38,11 +53,14 @@ class HappinessResult extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    '10',
+                    happinessIndex,
                     style: HappyTheme.happinessIndexStyle,
                   ),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
                   Text(
-                    'You are very unhappy. Reduce greed, increase gratitude and dilligence',
+                    whatIsToBeDone,
                     style: HappyTheme.happinessResultStyle,
                   ),
                 ],
